@@ -1,23 +1,23 @@
-import React, { useState } from "react";
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Button, Alert } from "react-native";
+import React from "react";
+import { StyleSheet, View } from "react-native";
+import Goal from "./GoalApp/Components/Goals";
+import GuessNumberApp from "./GuessNumberApp";
 
 export default function App() {
-  const [text, setText] = useState("Open up App.js to start working on your app!");
-  return (
-    <View style={styles.container}>
-      <Text>{text}</Text>
-      <Button onPress={() => setText("The text has been changed!")} title='Change Text' />
-      <StatusBar style='auto' />
+  let GoalAppDemo = () => (
+    <View style={styles.gaolScreen}>
+      <Goal />
     </View>
   );
+
+  return <GuessNumberApp />;
 }
 
 const styles = StyleSheet.create({
-  container: {
+  gaolScreen: {
+    padding: 40,
+  },
+  guessNumberScreen: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
   },
 });
